@@ -4,15 +4,14 @@ import {reduxForm,Field} from "redux-form";
 let FormComp = props =>
     <form onSubmit={props.handleSubmit}>
         <div>
-            <label htmlFor="email">Email</label>
-            <Field name='email' component='input' type='email'/>
+            <Field name='email' component={renderField} type='email'/>
         </div>
         <div>
             <label htmlFor="password">Password</label>
             <Field name='password' component='input' type='password'/>
         </div>
         <button type='submit'>Login</button>
-    </form>
+    </form>;
 
 
 FormComp = reduxForm({
@@ -20,3 +19,11 @@ FormComp = reduxForm({
 })(FormComp);
 
 export default FormComp;
+
+const renderField = ({input, meta}) => {
+    console.log(input);
+    return <div>
+            <label htmlFor="email">Email</label>
+            <input name='email' type="text" {...input}/>
+           </div>
+};
