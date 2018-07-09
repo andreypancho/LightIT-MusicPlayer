@@ -1,0 +1,5 @@
+const IDENTIFIER = '@player/';
+
+export const FETCH_SUCCESS = `${IDENTIFIER}FETCH_SUCCESS`;
+export const FETCH_REQUEST = `${IDENTIFIER}FETCH_REQUEST`;
+export const FETCH_FAIL = `${IDENTIFIER}FETCH_FAIL`;
